@@ -1,29 +1,23 @@
+FIRST = 10
+HEIGHT = 9
+WIDTH = FIRST - 1
+WVET_BLOCK = 0
 
-first = 10
-height = 9
-width = first - 1
-wvet_block = 0
+GEN = [int(x - 1) for x in range(FIRST + 1, 2, -1)]
 
-gen = [int(x - 1) for x in range(first + 1, 2, -1)]
+print(FIRST * "\x1b[48;5;22;1m \x1b[0m" + (sum(GEN) * 2 - FIRST * 2 + 1) * " " +
+      FIRST * "\x1b[48;5;22;1m \x1b[0m")
 
-print(first * "\x1b[48;5;22;1m \x1b[0m" + (sum(gen) * 2 - first * 2 + 1) * " " + first * "\x1b[48;5;22;1m \x1b[0m")
-
-for h in range(height):
-
-    if width != 1:
-
-        wvet_block += 1
-
+for h in range(HEIGHT):
+    if WIDTH != 1:
+        WVET_BLOCK += 1
         print(
-            " " * sum(gen[0:wvet_block])
-            + "\x1b[48;5;22;1m \x1b[0m" * gen[wvet_block]
-            + (sum(gen) * 2 - (sum(gen[0:wvet_block + 1])) * 2 + 1) * " "
-            + "\x1b[48;5;22;1m \x1b[0m" * gen[wvet_block]
-            + " " * sum(gen[0:wvet_block])
+            " " * sum(GEN[0:WVET_BLOCK])
+            + "\x1b[48;5;22;1m \x1b[0m" * GEN[WVET_BLOCK]
+            + (sum(GEN) * 2 - (sum(GEN[0:WVET_BLOCK + 1])) * 2 + 1) * " "
+            + "\x1b[48;5;22;1m \x1b[0m" * GEN[WVET_BLOCK]
+            + " " * sum(GEN[0:WVET_BLOCK])
         )
-
-        width -= 1
-
+        WIDTH -= 1
     else:
- 
-        print((sum(gen)) * " " + "\x1b[48;5;22;1m \x1b[0m" + (sum(gen)) * " ")
+        print((sum(GEN)) * " " + "\x1b[48;5;22;1m \x1b[0m" + (sum(GEN)) * " ")

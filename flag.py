@@ -1,23 +1,24 @@
-
-red = '\x1b[48;5;196m'
-yellow = '\x1b[48;5;220m'
-green = '\x1b[48;5;22m'
-stop = '\x1b[0m'
-
+RED = '\x1b[48;5;196m'
+YELLOW = '\x1b[48;5;220m'
+GREEN = '\x1b[48;5;22m'
+STOP = '\x1b[0m'
 
 
 def line(color):
-    line  = ' '*37
-    print(color, line, stop, end = '')
+    line = ' ' * 37
+    print(color, line, STOP, end='')
+
 
 def flag():
-    for i in range(3):
-        line(yellow)
+    for _ in range(3):
+        line(YELLOW)
         print()
-    for i in range(3):
-        line(green)
+    for _ in range(3):
+        line(GREEN)
         print()
-    for i in range(3):
-        line(red)
+    for _ in range(3):
+        line(RED)
         print()
+
+
 flag()
