@@ -14,7 +14,7 @@ for h in range(HEIGHT):
         print(
             " " * sum(GEN[0:BLOCK_COLOUR])
             + "\x1b[48;5;22;1m \x1b[0m" * GEN[BLOCK_COLOUR]
-            + (sum(GEN) * 2 - (sum(GEN[0:WVET_BLOCK + 1])) * 2 + 1) * " "
+            + (sum(GEN) * 2 - (sum(GEN[0:BLOCK_COLOUR + 1])) * 2 + 1) * " "
             + "\x1b[48;5;22;1m \x1b[0m" * GEN[BLOCK_COLOUR]
             + " " * sum(GEN[0:BLOCK_COLOUR])
         )
